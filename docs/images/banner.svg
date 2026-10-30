@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090D16" />
+      <stop offset="50%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#064E3B" stop-opacity="0.9" />
+    </linearGradient>
+
+    <!-- Emerald Glow -->
+    <radialGradient id="glowTeal" cx="85%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="glowBlue" cx="15%" cy="80%" r="45%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Card Gradient -->
+    <linearGradient id="pillGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.9" />
+    </linearGradient>
+
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34D399" />
+      <stop offset="50%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#A7F3D0" />
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.75" stroke-opacity="0.3" />
+    </pattern>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="360" fill="url(#bgGrad)" />
+  <rect width="1200" height="360" fill="url(#grid)" />
+  <rect width="1200" height="360" fill="url(#glowTeal)" />
+  <rect width="1200" height="360" fill="url(#glowBlue)" />
+
+  <!-- Top Accent Bar -->
+  <rect x="0" y="0" width="1200" height="4" fill="url(#textGrad)" />
+
+  <!-- Decorative Circuit lines -->
+  <path d="M 60 40 L 160 40 L 200 80 L 320 80" stroke="#10B981" stroke-width="1.5" stroke-opacity="0.4" fill="none" />
+  <circle cx="320" cy="80" r="3" fill="#34D399" />
+  <path d="M 1140 320 L 1040 320 L 1000 280 L 920 280" stroke="#38BDF8" stroke-width="1.5" stroke-opacity="0.4" fill="none" />
+  <circle cx="920" cy="280" r="3" fill="#38BDF8" />
+
+  <!-- Central Logo & Branding -->
+  <g transform="translate(80, 75)">
+    <!-- Brand Icon Shield/Badge -->
+    <rect x="0" y="0" width="76" height="76" rx="18" fill="#10B981" fill-opacity="0.15" stroke="#10B981" stroke-width="2" />
+    <!-- Lightning Icon -->
+    <path d="M 42 16 L 24 42 L 38 42 L 34 60 L 52 34 L 38 34 Z" fill="#34D399" />
+
+    <!-- Brand Header -->
+    <text x="96" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="800" font-size="34" letter-spacing="1" fill="#FFFFFF">
+      EV INFRA MAP <tspan fill="url(#textGrad)">INDIA</tspan>
+    </text>
+
+    <!-- Tagline -->
+    <text x="96" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="400" font-size="16" fill="#94A3B8" letter-spacing="0.5">
+      National Public Charging Directory • Geospatial Gap Analysis • Network Investment Planner
+    </text>
+  </g>
+
+  <!-- Feature Pills Bar -->
+  <g transform="translate(80, 205)">
+    <!-- Pill 1 -->
+    <g transform="translate(0, 0)">
+      <rect width="185" height="44" rx="22" fill="url(#pillGrad)" stroke="#334155" stroke-width="1" />
+      <text x="22" y="27" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-weight="600" font-size="13" fill="#34D399">⚡ 15,000+ Stations</text>
+    </g>
+
+    <!-- Pill 2 -->
+    <g transform="translate(200, 0)">
+      <rect width="205" height="44" rx="22" fill="url(#pillGrad)" stroke="#334155" stroke-width="1" />
+      <text x="22" y="27" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-weight="600" font-size="13" fill="#38BDF8">🗺️ H3 Hex Spatial Scarcity</text>
+    </g>
+
+    <!-- Pill 3 -->
+    <g transform="translate(420, 0)">
+      <rect width="195" height="44" rx="22" fill="url(#pillGrad)" stroke="#334155" stroke-width="1" />
+      <text x="20" y="27" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-weight="600" font-size="13" fill="#FBBF24">📊 VAHAN EV Analytics</text>
+    </g>
+
+    <!-- Pill 4 -->
+    <g transform="translate(630, 0)">
+      <rect width="195" height="44" rx="22" fill="url(#pillGrad)" stroke="#334155" stroke-width="1" />
+      <text x="20" y="27" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-weight="600" font-size="13" fill="#A78BFA">🔋 EV Corridor Routing</text>
+    </g>
+
+    <!-- Pill 5 -->
+    <g transform="translate(840, 0)">
+      <rect width="195" height="44" rx="22" fill="url(#pillGrad)" stroke="#334155" stroke-width="1" />
+      <text x="20" y="27" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-weight="600" font-size="13" fill="#F472B6">💰 CAPEX/OPEX Optimizer</text>
+    </g>
+  </g>
+
+  <!-- Bottom Tech Stack Indicator -->
+  <g transform="translate(80, 290)">
+    <text x="0" y="16" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-weight="500" font-size="13" fill="#64748B">
+      Built with: <tspan fill="#CBD5E1">FastAPI • React 19 • TypeScript • Vite • Leaflet • Uber H3 • SQLAlchemy • SQLite</tspan>
+    </text>
+  </g>
+</svg>
