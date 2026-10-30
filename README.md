@@ -18,8 +18,9 @@
 </p>
 
 <p align="center">
+  <a href="https://ev-infra-map-india.onrender.com"><strong>🚀 Live Demo</strong></a> •
   <a href="#-key-features">Key Features</a> •
-  <a href="#-dashboard-preview">Preview</a> •
+  <a href="#-dashboard--screenshots">Screenshots</a> •
   <a href="#-system-architecture">Architecture</a> •
   <a href="#-quick-start">Quick Start</a> •
   <a href="#-api-endpoints">API Reference</a> •
@@ -38,11 +39,43 @@ Whether evaluating urban charger deficits, planning intercity highway corridors,
 
 ---
 
-## 📸 Dashboard Preview
+## 📸 Dashboard & Screenshots
 
 <div align="center">
-  <img src="docs/images/dashboard-preview.png" alt="EV Infra Map India Dashboard UI" width="95%" style="border-radius: 12px; border: 1px solid #334155; box-shadow: 0 10px 30px rgba(0,0,0,0.5);"/>
-  <p><em>Real-time Decision Dashboard displaying national charging metrics, connector distribution, and regional analysis.</em></p>
+
+<table>
+  <tr>
+    <td width="50%">
+      <img src="docs/images/national-map.png" alt="National Map" width="100%" style="border-radius: 10px;"/>
+      <p><em>National Map — interactive Leaflet GIS view of public charging stations across India.</em></p>
+    </td>
+    <td width="50%">
+      <img src="docs/images/dashboard-preview.png" alt="Decision Dashboard" width="100%" style="border-radius: 10px;"/>
+      <p><em>Decision Dashboard — national station, connector, operator, and charger-type metrics.</em></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="docs/images/gap-assessment.png" alt="Gap Assessment" width="100%" style="border-radius: 10px;"/>
+      <p><em>Gap Assessment — district-level station scarcity scoring with editable weights.</em></p>
+    </td>
+    <td width="50%">
+      <img src="docs/images/charger-planner.png" alt="Charger Planner" width="100%" style="border-radius: 10px;"/>
+      <p><em>Charger Planner — station requirement estimates from EV population and planning assumptions.</em></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="docs/images/budget-optimizer.png" alt="Budget Optimizer" width="100%" style="border-radius: 10px;"/>
+      <p><em>Budget Optimizer — budget-constrained district opportunity ranking.</em></p>
+    </td>
+    <td width="50%">
+      <img src="docs/images/trip-planner.png" alt="Trip Planner" width="100%" style="border-radius: 10px;"/>
+      <p><em>Trip Planner — corridor energy estimates, charging stops, and highway dead-zone detection.</em></p>
+    </td>
+  </tr>
+</table>
+
 </div>
 
 ---
