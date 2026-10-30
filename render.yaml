@@ -1,0 +1,27 @@
+services:
+  # Backend FastAPI Web Service
+  - type: web
+    name: ev-infra-backend
+    env: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.0
+      - key: ALLOWED_ORIGINS
+        value: "*"
+
+  # Frontend Static Site
+  - type: web
+    name: ev-infra-frontend
+    env: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_BASE_URL
+        fromService:
+          type: web
+          name: ev-infra-backend
+          property: host

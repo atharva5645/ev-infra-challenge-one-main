@@ -233,11 +233,17 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+_cors_env = os.getenv("ALLOWED_ORIGINS", "")
+if _cors_env.strip() == "*" or not _cors_env.strip():
+    _cors_origins = ["*"]
+else:
+    _cors_origins = [origin.strip() for origin in _cors_env.split(",") if origin.strip()]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=_cors_origins,
     allow_credentials=True,
-    allow_methods=["GET", "POST"],
+    allow_methods=["*"],
     allow_headers=["*"],
 )
 
@@ -1092,3 +1098,14 @@ async def get_candidate_sites(
         generated_at=datetime.now(timezone.utc).isoformat(),
     )
     return {"success": True, "data": sites, "count": len(sites), "meta": meta}
+
+
+# Mount built static frontend if available (for single-container or all-in-one deployments)
+from fastapi.staticfiles import StaticFiles
+
+_frontend_dist = Path(__file__).resolve().parent.parent.parent / "frontend" / "dist"
+if not _frontend_dist.exists():
+    _frontend_dist = Path(__file__).resolve().parent.parent / "frontend" / "dist"
+
+if _frontend_dist.exists() and (_frontend_dist / "index.html").exists():
+    app.mount("/", StaticFiles(directory=str(_frontend_dist), html=True), name="frontend")
