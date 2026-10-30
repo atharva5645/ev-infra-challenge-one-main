@@ -88,6 +88,19 @@ async function getJson<T>(path: string, signal?: AbortSignal): Promise<T> {
   return requestJson<T>(path, { signal })
 }
 
+/**
+ * Best-effort keep-alive ping. Render's free tier spins the service down after
+ * a period of inactivity; calling this while the site is open keeps the
+ * backend awake so the next user request does not hit a cold start.
+ */
+export async function pingHealth(signal?: AbortSignal): Promise<void> {
+  try {
+    await fetch(`${API_BASE}/health`, { signal, headers: { Accept: 'application/json' } })
+  } catch {
+    // Keep-alive pings are best-effort; network errors are ignored.
+  }
+}
+
 function normalizeCharger(raw: RawCharger): MapStation {
   if (!raw.id || !raw.state || !Number.isFinite(raw.latitude) || !Number.isFinite(raw.longitude)
       || raw.latitude < -90 || raw.latitude > 90 || raw.longitude < -180 || raw.longitude > 180) {

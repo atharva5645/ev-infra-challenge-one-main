@@ -4,6 +4,7 @@ import {
   Map, Menu, Route, X, Zap,
 } from 'lucide-react'
 import NationalMap from './components/NationalMap'
+import { pingHealth } from './services/chargerApi'
 const DecisionDashboard = lazy(() => import('./components/DecisionDashboard'))
 const GapAssessment = lazy(() => import('./components/GapAssessment'))
 const ChargerPlanner = lazy(() => import('./components/ChargerPlanner'))
@@ -32,6 +33,21 @@ function App() {
     const handler = () => setActive('Budget Optimizer')
     window.addEventListener('switch-to-budget-optimizer', handler)
     return () => window.removeEventListener('switch-to-budget-optimizer', handler)
+  }, [])
+
+  // Keep the Render free-tier backend awake while this page is open.
+  useEffect(() => {
+    const ping = () => { void pingHealth() }
+    ping()
+    const interval = window.setInterval(ping, 5 * 60 * 1000)
+    const onVisibilityChange = () => {
+      if (document.visibilityState === 'visible') ping()
+    }
+    document.addEventListener('visibilitychange', onVisibilityChange)
+    return () => {
+      window.clearInterval(interval)
+      document.removeEventListener('visibilitychange', onVisibilityChange)
+    }
   }, [])
 
   return (
