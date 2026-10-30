@@ -2,10 +2,9 @@ name: Keep Render backend awake
 
 on:
   schedule:
-    # GitHub Actions runs on a best-effort schedule; every 5 minutes is the
-    # minimum supported interval. This keeps Render's free-tier service from
-    # spinning down after 15 minutes of inactivity.
-    - cron: "*/5 * * * *"
+    # Render's free tier spins down after 15 minutes of inactivity, so a
+    # 10-minute ping is enough to keep it awake while using fewer runs.
+    - cron: "*/10 * * * *"
   workflow_dispatch:
 
 jobs:

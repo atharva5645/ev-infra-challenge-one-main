@@ -39,7 +39,7 @@ function App() {
   useEffect(() => {
     const ping = () => { void pingHealth() }
     ping()
-    const interval = window.setInterval(ping, 5 * 60 * 1000)
+    const interval = window.setInterval(ping, 10 * 60 * 1000)
     const onVisibilityChange = () => {
       if (document.visibilityState === 'visible') ping()
     }
