@@ -14,7 +14,10 @@ import type {
 import type { CandidateSite, OptimizePayload, OptimizeResponse, RequirementsPayload, RequirementsResponse } from '../types/planning'
 import type { TripCorridor, TripPlanPayload, TripPlanResponse } from '../types/trip'
 
-const API_BASE = (import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000').replace(/\/$/, '')
+const API_BASE = (
+  import.meta.env.VITE_API_BASE_URL ||
+  (import.meta.env.DEV ? 'http://127.0.0.1:8000' : '')
+).replace(/\/$/, '')
 
 type RawCharger = {
   id: string
