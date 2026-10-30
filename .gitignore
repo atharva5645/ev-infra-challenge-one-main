@@ -1,0 +1,40 @@
+# Dependencies and generated frontend output
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+.vite/
+**/.vite/
+tsconfig.tsbuildinfo
+**/tsconfig.tsbuildinfo
+
+# Python environments, bytecode, and test caches
+.venv/
+**/.venv/
+venv/
+**/venv/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+**/*.py[cod]
+.pytest_cache/
+**/.pytest_cache/
+
+# Local configuration, secrets, and credentials
+.env
+.env.*
+*.env
+*.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.pfx
+credentials.json
+client_secrets.json
+
+# Editor and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
